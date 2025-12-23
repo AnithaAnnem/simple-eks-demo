@@ -163,7 +163,7 @@ In this setup, **ClusterIP** is the correct and recommended service type because
 
 ### Final Decision
 
-✅ **ClusterIP** is used because:
+**ClusterIP** is used because:
 - ALB handles all external traffic
 - Kubernetes services remain internal
 - Architecture is production-aligned and cost-efficient
@@ -267,6 +267,41 @@ Using **OIDC + IRSA** ensures:
 
 ---
 
+## 10. Deployment Command
+```
+kubectl apply -f . -n demo
+```
+**This command:**
+
+- Creates the namespace
+
+- Deploys the application
+
+- Creates the service
+
+- Creates the ingress
+
+  
+## 11. Verification Steps
+
+**Check Pods**
+```
+kubectl get pods -n demo
+```
+**Check Service**
+```
+kubectl get svc -n demo
+```
+**Check Ingress**
+```
+kubectl get ingress -n demo
+```
+## 12. Browser Access
+
+**Open the ALB DNS name in a browser:**
+```
+http://<ALB-DNS-NAME>/
+```
 > **Summary:**  
 > OIDC + IRSA allows the AWS Load Balancer Controller to securely interact with AWS resources while keeping both Kubernetes and AWS permissions tightly scoped and production-ready.
 
