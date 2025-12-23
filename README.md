@@ -37,13 +37,13 @@ The following components must already be available:
 ---
 
 ## 3. Project Structure
-
+```
 simple-eks-demo/
 ├── namespace.yml
 ├── app1-deployment.yml
 ├── app1-service.yml
 ├── alb-ingress.yml
-
+```
 
 Each file has a specific responsibility and is explained below.
 
